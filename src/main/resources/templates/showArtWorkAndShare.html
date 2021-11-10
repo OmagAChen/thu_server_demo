@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title th:text="' 2021 AI 藝術展 作品 : ' + ${artWorkModel.artName}"></title>
+    <!--Master Program of Digital Innovation. Tunghai University-->
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <!-- Simple line icons-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css?v=2" rel="stylesheet" />
+    <!-- You can use Open Graph tags to customize link previews.
+  Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+    <meta property="og:url"           th:attr="content='https://translate.google.com.tw/?hl=zh-TW&tab=TT'"/>
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Art Work" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="" />
+  </head>
+  <body id="page-top">
+
+    <!-- Navigation-->
+    <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand"><a href="#page-top">導覽</a></li>
+        <li class="sidebar-nav-item"><a href="#page-top">頁首</a></li>
+        <li class="sidebar-nav-item"><a href="#artWork">作品</a></li>
+        <li class="sidebar-nav-item"><a href="#goTeamFP">回官網</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header-->
+    <header class="artworks d-flex align-items-center">
+      <div class="container px-4 px-lg-5 text-center">
+        <h1 class="mb-1 text-white bg-dark">2021 AI 藝術展</h1>
+        <h3 class="mb-5 text-white bg-dark"><em>AI 藝術科技實驗室</em></h3>
+        <a class="btn btn-dark btn-xl" href="#artWork">作品</a>
+      </div>
+    </header>
+
+    <!-- Services-->
+    <section class="content-section bg-primary text-white text-center" id="artWork">
+      <div class="container px-4 px-lg-5">
+        <div class="content-section-heading">
+          <h3 class="text-secondary mb-0">作品</h3>
+          <h2 class="mb-5" th:text="${artWorkModel.artName}"></h2>
+          <img class="img-fluid" th:src="${artWorkModel.filePath}" alt= image_File >
+          <br><br>
+          <h3 class="text-secondary mb-0">Over View</h3>
+          <span th:text="${artWorkModel.overView}" ></span>
+        </div>
+      </div>
+
+      <br><br>
+      <br><br>
+
+      <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+              (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+            </script>
+      <!-- Your share button code -->
+      <div class="fb-share-button"
+           th:attr="data-href='https://translate.google.com.tw/?hl=zh-TW&tab=TT'"
+           data-layout="button"
+           data-size="large">
+      </div>
+    </section>
+
+    <!-- Call to Action-->
+    <section class="content-section bg-primary text-white" id="goTeamFP">
+      <div class="container px-4 px-lg-5 text-center">
+        <h2 class="mb-4">更多活動資訊清洽官網</h2>
+        <a class="btn btn-xl btn-light " href="/indexWebPage">前往官網</a>
+        <a class="btn btn-xl btn-dark" href="#page-top">回到頂部</a>
+      </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer text-center">
+      <div class="container px-4 px-lg-5">
+        <img class="img-fluid" src="assets/img/schoolteamLogo30size.jpg" alt="..." />
+        <img class="img-fluid" src="assets/img/NLPILOGO.png" alt="..." />
+        <p class="text-muted small mb-0">Copyright &copy; 東海大學數創所 AI藝術科技實驗室 2021</p>
+      </div>
+    </footer>
+
+    <!-- Go To PreviousPage Button-->
+    <a class="go-to-previous-page rounded" href="javascript:history.back(1)"><i class="fas fa-angle-left"></i></a>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
