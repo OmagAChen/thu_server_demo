@@ -26,16 +26,27 @@ public class aiArtTechInNLPI_Controller {
     }
 
     @RequestMapping("/Show_No.2_ArtWorks")
-    public String Show_No2_ArtWorks(Model model) {
+    public String Show_No2_ArtWorks(@RequestParam(value="page", required = false) Integer page, Model model) {
+        if(page == null){
+            page = 1;
+        }
+        String createDate = pageToDate(page);
         Iterable<ArtWorkModel> artWorkList = artWorkService.getArtWorkModels();
         model.addAttribute("artWorkList", artWorkList);
+        model.addAttribute("createDate", createDate);
         return "Show_No2_ArtWorks";
     }
 
     @RequestMapping("/Show_No.3_ArtWorks")
-    public String Show_No3_ArtWorks(Model model) {
+    public String Show_No3_ArtWorks(@RequestParam(value="page", required = false) Integer page, Model model) {
+
+        if(page == null){
+            page = 1;
+        }
+        String createDate = pageToDate(page);
         Iterable<ArtWorkModel> artWorkList = artWorkService.getArtWorkModels();
         model.addAttribute("artWorkList", artWorkList);
+        model.addAttribute("createDate", createDate);
         return "Show_No3_ArtWorks";
     }
 
@@ -58,5 +69,29 @@ public class aiArtTechInNLPI_Controller {
         Iterable<ArtWorkModel> artWorkList = artWorkService.getArtWorkModels();
         model.addAttribute("artWorkList", artWorkList);
         return "Show_No6_ArtWorks";
+    }
+
+    private String pageToDate(Integer page){
+        String createDate =  "createDate";
+        switch(page) {
+            case 1:
+                createDate = "2021-11-14";
+                break;
+            case 2:
+                createDate = "2021-11-15";
+                break;
+            case 3:
+                createDate = "2021-11-16";
+                break;
+            case 4:
+                createDate = "2021-11-17";
+                break;
+            case 5:
+                createDate = "2021-11-18";
+                break;
+            default:
+                System.out.println("Page to Date ERROR");
+        }
+        return createDate;
     }
 }
