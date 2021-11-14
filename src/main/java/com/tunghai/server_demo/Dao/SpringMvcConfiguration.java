@@ -18,6 +18,7 @@ public class SpringMvcConfiguration extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/css/**").addResourceLocations("classpath:/static/css/");
         registry.addResourceHandler("/image/**").addResourceLocations("classpath:/static/image/");
         registry.addResourceHandler("/serverUploadTestLocation/**").addResourceLocations("file:/D:/Server/serverUploadTestLocation/");
+        registry.addResourceHandler("/artWorks/**").addResourceLocations("file:/D:/Server/artWorks/");
         super.addResourceHandlers(registry);
     }
 }
