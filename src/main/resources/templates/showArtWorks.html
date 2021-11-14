@@ -9,7 +9,7 @@
 <body>
 <div class="container">
   <h2>Art Work List</h2>
-  <ul th:each="artWorkModel:${artWorkList}" th:if = "${artWorkModel.author == 'me'}">
+  <ul th:each="artWorkModel:${artWorkList}" >
     <li>
       <div class="desc" >
         <span>"ART WORK"</span>
