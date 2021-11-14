@@ -16,14 +16,14 @@
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css?v=2" rel="stylesheet" />
+    <link href="css/styles.css?v=1" rel="stylesheet" />
     <!-- You can use Open Graph tags to customize link previews.
   Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-    <meta property="og:url"           th:attr="content='https://translate.google.com.tw/?hl=zh-TW&tab=TT'"/>
+    <meta property="og:url"           th:attr="content='http://140.128.104.168:8086/showArtWorkNoShare?filePath='+${artWorkModel.filePath}"/>
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="Art Work" />
-    <meta property="og:description"   content="Your description" />
-    <meta property="og:image"         content="" />
+    <meta property="og:description"   content=" 2021 AI 藝術展 在 國立公共資訊圖書館 " />
+    <meta property="og:image"         th:attr="content='${artWorkModel.filePath}'" />
   </head>
   <body id="page-top">
 
@@ -38,7 +38,7 @@
     </nav>
 
     <!-- Services-->
-    <section class="content-section bg-primary text-white text-center" id="artWork">
+    <section class="content-section bg-dark text-white text-center" id="artWork">
       <div class="container px-4 px-lg-5">
         <div class="content-section-heading">
           <h3 class="text-secondary mb-0">作品</h3>
@@ -66,7 +66,7 @@
             </script>
       <!-- Your share button code -->
       <div class="fb-share-button"
-           th:attr="data-href='https://translate.google.com.tw/?hl=zh-TW&tab=TT'"
+           th:attr="data-href='http://140.128.104.168:8086/showArtWorkNoShare?filePath='+${artWorkModel.filePath}"
            data-layout="button"
            data-size="large">
       </div>
