@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class aiArtTechInNLPI_Controller {
     @Autowired    //注入Service的依賴
     ArtWorkService artWorkService;
-/*
+
     @RequestMapping("/AI_Art_Tech_MainPage")
     public String aI_Art_Tech_MainPage() {
         return "AI_Art_Tech_MainPage";
@@ -25,19 +25,10 @@ public class aiArtTechInNLPI_Controller {
         return "Show_No2_ArtWorks";
     }
 
-    @GetMapping("/showArtWorkNoShare")
-    public String showArtWorkNoShare(@RequestParam(value="filePath") String filePath, Model model) {
-        ArtWorkModel artWorkModel = artWorkService.getArtWorkModelByFilePath(filePath);
-        model.addAttribute("artWorkModel", artWorkModel);
-        return "showArtWorkNoShare";
+    @RequestMapping("/Show_No.3_ArtWorks")
+    public String Show_No3_ArtWorks(Model model) {
+        Iterable<ArtWorkModel> artWorkList = artWorkService.getArtWorkModels();
+        model.addAttribute("artWorkList", artWorkList);
+        return "Show_No3_ArtWorks";
     }
-
-    @GetMapping("/showArtWorkAndShare")
-    public String showArtWorkAndShare(@RequestParam(value="filePath") String filePath, Model model) {
-        ArtWorkModel artWorkModel = artWorkService.getArtWorkModelByFilePath(filePath);
-        model.addAttribute("artWorkModel", artWorkModel);
-        return "showArtWorkAndShare";
-    }
-
- */
 }
