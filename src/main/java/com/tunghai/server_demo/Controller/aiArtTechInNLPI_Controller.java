@@ -75,19 +75,28 @@ public class aiArtTechInNLPI_Controller {
         String createDate =  "createDate";
         switch(page) {
             case 1:
-                createDate = "2021-11-14";
-                break;
-            case 2:
-                createDate = "2021-11-15";
-                break;
-            case 3:
-                createDate = "2021-11-16";
-                break;
-            case 4:
                 createDate = "2021-11-17";
                 break;
-            case 5:
+            case 2:
                 createDate = "2021-11-18";
+                break;
+            case 3:
+                createDate = "2021-11-19";
+                break;
+            case 4:
+                createDate = "2021-11-20";
+                break;
+            case 5:
+                createDate = "2021-11-21";
+                break;
+            case 6:
+                createDate = "2021-11-23";
+                break;
+            case 7:
+                createDate = "2021-11-24";
+                break;
+            case 8:
+                createDate = "2021-11-25";
                 break;
             default:
                 System.out.println("Page to Date ERROR");
