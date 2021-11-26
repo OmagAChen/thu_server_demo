@@ -59,7 +59,7 @@
         </ul>
 
         <div class="row gx-0" >
-          <div class="col-lg-6" th:each="artWorkModel:${artWorkList}" th:if = "${artWorkModel.author == 'AI_painter' and #strings.contains(artWorkModel.createDate,'-')}">
+          <div class="col-lg-6" th:each="artWorkModel:${artWorkList}" th:if = "${artWorkModel.author == 'AI_painter' and #strings.contains(artWorkModel.createDate,createDate)}">
             <a class="portfolio-item" th:href="@{/showArtWorkNoShare(filePath=${artWorkModel.filePath})}">
               <div class="caption">
                 <div class="caption-content">
